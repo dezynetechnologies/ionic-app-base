@@ -1,0 +1,32 @@
+<ion-view title="{{item.name}}">
+    <ion-content padding="true">
+        <p>Last Modified on: {{item.lastModified}}</p>
+        <p>Handle : {{item.handle}}</p>
+        <h4>Metadata:</h4>
+        <ion-list>
+            <ion-item ng-repeat="metadataEntry in item.metadata" type="item-text-wrap">
+                <h4>{{metadataEntry.key}}:{{metadataEntry.value}}</h4>
+            </ion-item>
+        </ion-list>
+        <h4>Bitstreams:</h4>
+        <ion-list>
+            <ion-item ng-repeat="bitstream in item.bitstreams" type="item-text-wrap">
+                <h4>Name : {{bitstream.name}}</h4>
+                <h4>Type : {{bitstream.type}}</h4>
+            </ion-item>
+        </ion-list>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+                <i class="icon ion-thumbsup"></i> Like
+            </a>
+            <a class="tab-item" href="#">
+                <i class="icon ion-chatbox"></i> Comment
+            </a>
+            <a class="tab-item" href="#">
+                <i class="icon ion-share"></i> Share
+            </a>
+        </div>
+        <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/communities"> All Communities</a>
+        </p>
+    </ion-content>
+</ion-view>

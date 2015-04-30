@@ -50,3 +50,19 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+gulp.task('lint', function () {
+    return gulp.src(['./www/services/*.js',
+                     './www/app/*.js',
+                     './www/app/login/*.js',
+                     './www/app/oauth/*.js',
+                     './www/app/communities/*.js',
+                     './www/app/communities/details/*.js',
+                     './www/app/subscribe/*.js',
+                     './www/app/collections/*.js',
+                     './www/app/items/*.js'
+                    ])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default', {
+            verbose: true
+        }));
+});

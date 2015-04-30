@@ -1,0 +1,19 @@
+<!--
+  This template gets placed in the Pet tab's <ion-nav-view> directive.
+  It was wired up in the app config (app.js)
+  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+-->
+<ion-view title="Communities in DSpace">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="community in communities" type="item-text-wrap" href="#/tab/communities/{{community.id}}">
+                <h3>{{community.name}}</h3>
+                <h3>{{community.id}}</h3>
+                <p>{{community.shortDescription}}</p>
+                <p>{{community.introductoryText}}</p>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>
